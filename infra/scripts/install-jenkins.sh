@@ -1,9 +1,10 @@
 #!/bin/bash 
+set -e
 
 helm repo add jenkins https://charts.jenkins.io
 helm repo update
 
-sudo kubectl create namespace jenkins 
+kubectl create namespace jenkins 
 
 helm install jenkins jenkins/jenkins -n jenkins \
 --set persistence.enabled=true \

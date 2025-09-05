@@ -1,0 +1,3 @@
+---
+- name: Update
+  script: "{{ playbook_dir }}/../scripts/update.sh"

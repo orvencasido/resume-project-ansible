@@ -1,0 +1,3 @@
+---
+- name: Install Docker
+  script: "{{ playbook_dir }}/../scripts/install-docker.sh"
