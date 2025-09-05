@@ -1,0 +1,9 @@
+---
+- name: Ping
+  hosts: all
+  tasks:
+    - name: Ping
+      command: touch orven.txt
+  
+    - name: Insert
+      shell: echo "HEPHEP HOORAY!" >> orven.txt
