@@ -14,7 +14,7 @@ pipeline {
     }
 
     environment {
-        DOCKER_IMAGE = "orvencasido/resume-project-k8s-3"
+        DOCKER_IMAGE = "orvencasido/resume-project-ansible"
         VERSION = "${params.VERSION ?: "1.${env.BUILD_NUMBER}"}"
     }
     

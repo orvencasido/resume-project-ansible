@@ -14,7 +14,7 @@ pipeline {
     }
 
     environment {
-        DOCKER_IMAGE = "orvencasido/resume-project-k8s-3"
+        DOCKER_IMAGE = "orvencasido/resume-project-ansible"
     }
 
     stages {
@@ -34,8 +34,8 @@ pipeline {
                 container('kubectl') {
                     script {
                         sh """
-                            kubectl apply -f resume-deployment.yaml -n default
-                            kubectl apply -f resume-service.yaml -n default
+                            kubectl apply -f ../infra/k8s/resume-deployment.yaml -n default
+                            kubectl apply -f ../infra/k8s/resume-service.yaml -n default
                             kubectl set image deployment/resume resume=${DOCKER_IMAGE}:${VERSION} -n default
                             kubectl rollout status deployment/resume -n default
                         """
