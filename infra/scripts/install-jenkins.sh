@@ -21,4 +21,6 @@ helm install jenkins jenkins/jenkins -n jenkins \
   --set persistence.size=8Gi \
   --set persistence.storageClass=local-path \
   --set controller.serviceType=NodePort \
-  --set controller.nodePort=30080
+  --set controller.nodePort=30080 \
+  --set controller.adminUser=admin \
+  --set controller.adminPassword=1234
