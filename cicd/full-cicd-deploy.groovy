@@ -39,8 +39,8 @@ pipeline {
                 container('kubectl') {
                     script {
                         sh """
-                            kubectl apply -f ../infra/k8s/resume-deployment.yaml -n default
-                            kubectl apply -f ../infra/k8s/resume-service.yaml -n default
+                            kubectl apply -f infra/k8s/resume-deployment.yaml -n default
+                            kubectl apply -f infra/k8s/resume-service.yaml -n default
                             kubectl set image deployment/resume resume=${DOCKER_IMAGE}:${VERSION} -n default
                             kubectl rollout status deployment/resume -n default
                         """
