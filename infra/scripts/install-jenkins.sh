@@ -22,5 +22,8 @@ helm install jenkins jenkins/jenkins -n jenkins \
   --set persistence.storageClass=local-path \
   --set controller.serviceType=NodePort \
   --set controller.nodePort=30080 \
-  --set controller.adminUser=admin \
-  --set controller.adminPassword=1234
+  --set-string controller.admin.username=admin \
+  --set-string controller.admin.password=1234
+
+# kubectl exec --namespace jenkins -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/additional/chart-admin-password && echo
+
