@@ -3,8 +3,8 @@
     become: yes
     roles:
       - update
-      - git
       - docker
       - k3s
       - helm
       - jenkins
+

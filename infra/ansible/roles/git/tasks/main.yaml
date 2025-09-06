@@ -1,3 +1,0 @@
----
-- name: Install Git
-  script: "{{ playbook_dir }}/../scripts/install-git.sh"
