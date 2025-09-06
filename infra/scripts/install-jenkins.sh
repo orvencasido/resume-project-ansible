@@ -17,8 +17,8 @@ helm repo add jenkins https://charts.jenkins.io
 helm repo update
 
 helm install jenkins jenkins/jenkins -n jenkins \
---set persistence.enabled=true \
---set persistence.size=8Gi \
---set persistence.storageClass=local-path \
---set controller.service.type=NodePort \
---set controller.service.nodePort=30080
+  --set persistence.enabled=true \
+  --set persistence.size=8Gi \
+  --set persistence.storageClass=local-path \
+  --set controller.serviceType=NodePort \
+  --set controller.nodePort=30080
